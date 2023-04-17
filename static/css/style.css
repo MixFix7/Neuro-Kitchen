@@ -1,0 +1,336 @@
+/* Main styles */
+html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    background-image: url("images/wooden.jpg");
+  }
+
+  
+  header {
+    background-color: #fff;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    top: 0;
+    z-index: 1;
+  }
+  
+  header h1 {
+    font-size: 30px;
+    margin: 0;
+    padding: 20px;
+  }
+  
+  nav ul {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  nav li {
+    margin-right: 20px;
+  }
+  
+  nav li:last-child {
+    margin-right: 0;
+  }
+  
+  nav a {
+    color: #333;
+    text-decoration: none;
+    font-size: 18px;
+    padding: 20px;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  nav a:hover {
+    background-color: #6dbad8;
+    color: #fff;
+  }
+  
+  main {
+    margin: 50px auto;
+    max-width: 1200px;
+  }
+  
+  .input-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 300px;
+  }
+  
+  /* Input styles */
+label {
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+
+  
+
+  .border-rgb-white {
+    --border-radius: 15px;
+    --border-width: 4px;
+    position: relative;
+    width: 620px;
+    padding: 1em;
+    border: none;
+    background-color: white;
+    font-family: "Roboto", Arial, "Segoe UI", sans-serif;
+    font-size: 18px;
+    font-weight: 500;
+    color: black;
+    z-index: 2;
+    border-radius: var(--border-radius);
+    border: var(--border-width) solid transparent;
+    background-image: conic-gradient(
+         #488cfb,
+         #29dbbc,
+         #ddf505,
+         #ff9f0e,
+         #e440bb,
+         #655adc,
+         #488cfb
+       );
+    background-origin: border-box;
+    background-clip: padding-box;
+    -webkit-mask-image: linear-gradient(#000, #000), none;
+    mask-image: linear-gradient(#000, #000), none;
+    -webkit-mask-origin: content-box, content-box;
+    mask-origin: content-box, content-box;
+    -webkit-mask-clip: border-box, border-box;
+    mask-composite: exclude;
+    -webkit-mask-composite: exclude;
+    filter: hue-rotate(0);
+    animation: rotate-hue linear 500ms infinite;
+  }
+  
+  
+  .border-rgb-white::placeholder {
+    color: #000000;
+  }
+  
+  
+  
+  
+  
+  button {
+    --border-radius: 15px;
+    --border-width: 4px;
+    appearance: none;
+    position: relative;
+    padding: 1em 2em;
+    border: 0;
+    background-color: transparent;
+    font-family: "Roboto", Arial, "Segoe UI", sans-serif;
+    font-size: 18px;
+    font-weight: 500;
+    color: rgb(0, 0, 0);
+    z-index: 2;
+   }
+   
+   button::after {
+    --m-i: linear-gradient(#000, #000);
+    --m-o: content-box, padding-box;
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    padding: var(--border-width);
+    border-radius: var(--border-radius);
+    background-image: conic-gradient(
+       #488cfb,
+       #29dbbc,
+       #ddf505,
+       #ff9f0e,
+       #e440bb,
+       #655adc,
+       #488cfb
+     );
+    -webkit-mask-image: var(--m-i), var(--m-i);
+    mask-image: var(--m-i), var(--m-i);
+    -webkit-mask-origin: var(--m-o);
+    mask-origin: var(--m-o);
+    -webkit-mask-clip: var(--m-o);
+    mask-composite: exclude;
+    -webkit-mask-composite: destination-out;
+    filter: hue-rotate(0);
+    animation: rotate-hue linear 500ms infinite;
+   }
+   
+   button:hover::after {
+    animation-play-state: running;
+   }
+   
+   @keyframes rotate-hue {
+    to {
+     filter: hue-rotate(1turn);
+    }
+   }
+   
+   button,
+   button::after {
+    box-sizing: border-box;
+   }
+   
+   button:active {
+    --border-width: 5px;
+   }
+
+  .wooden-border {
+    border-radius: 20px;
+    padding: 20px;
+  }
+  
+  .golden-border {
+    width: 800px;
+    background-color: #f6d38b;
+    border: 5px solid #b98f6c;
+    border-radius: 20px;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    background-image: url('images/back.jpg');
+  }
+
+  
+  /* Result styles */
+  .result-container {
+    border: 2px solid #6dbad8;
+    background-image: url('images/result1.jpg');
+    padding: 20px;
+    height: 800px;
+    max-width: 800px;
+    margin: 0 auto;
+    border-radius: 10px;
+  }
+
+
+  
+  .result-container h2 {
+    color: #fff;
+    font-size: 24px;
+    margin-top: 0;
+    margin-bottom: 20px;
+  }
+  
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  li {
+    margin-bottom: 10px;
+  }
+  
+  a {
+    color: #333;
+    text-decoration: none;
+    font-size: 18px;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  a:hover {
+    color: #6dbad8;
+  }
+  
+  /* Footer styles */
+  footer {
+    background-color: #333;
+    color: #fff;
+    padding: 30px 0;
+  }
+
+
+  .animated-select {
+    appearance: none;
+    background-color: rgb(219, 219, 219);
+    border: none;
+    font-size: 16px;
+    padding: 10px;
+    position: relative;
+  }
+  
+  .animated-select:before {
+    content: "\f078";
+    font-family: FontAwesome;
+    font-size: 14px;
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: transform 0.2s ease-in-out;
+  }
+  
+  .animated-select:focus:before {
+    transform: translateY(-50%) rotate(-180deg);
+  }
+  
+  .animated-select option {
+    background-color: #fff;
+    color: #333;
+    font-size: 16px;
+    transition: background-color 0.2s ease-in-out;
+  }
+  
+  .animated-select option:hover {
+    background-color: #f2f2f2;
+  }
+  
+  .animated-select option:checked {
+    background-color: #007bff;
+    color: #fff;
+  }
+  
+  
+  
+  
+  .footer-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .social-links a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 24px;
+    margin-right: 20px;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .social-links a:hover {
+    color: #6dbad8;
+  }
+  
+  .footer-info {
+    text-align: right;
+  }
+  
+  .footer-info p {
+    margin-bottom: 10px;
+  }
+  
+  .footer-info a {
+    color: #fff;
+    text-decoration: none;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .footer-info a:hover {
+    color: #6dbad8;
+  }
+  
+  
