@@ -1,3 +1,4 @@
 kitchen/keys.py
 settings.py
 .idea/
+*.pyc

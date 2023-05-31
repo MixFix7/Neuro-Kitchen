@@ -1,0 +1,94 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %} Neuro kitchen {% endblock %}
+
+{% block css %} <link rel="stylesheet" href="{% static 'css/style.css' %}"> {% endblock %}
+
+{% block js %} <script defer src="{% static 'js/script.js' %}"></script> {% endblock %}
+
+{% block link %} <link rel="shortcut icon" type="icon/png" href="{% static 'images/favicon.png' %}"> {% endblock %}
+
+{% block content %}
+  
+<header class="header">
+  <h1>
+  <span>N</span>
+  <span>e</span>
+  <span>u</span>
+  <span>r</span>
+  <span>o</span>
+  <span></span>
+  <span>k</span>
+  <span>i</span>
+  <span>t</span>
+  <span>c</span>
+  <span>h</span>
+  <span>e</span>
+  <span>n</span>
+  </h1>
+</header>
+
+
+<div class="input-container">
+    <div class="wooden-border">
+      <div class="golden-border">
+        <form action="{% url 'gpt_chef' %}" method="POST">     
+          {% csrf_token %}
+          <input type="text" name="Ingredients_field" class="border-rgb-white" placeholder="Enter your ingredients" {% if list_ingredients %} value="{{list_ingredients}}" {% endif %}/>
+          <button type="submit" id="enter" onclick="startLoading()">Enter</button>
+          <select class="animated-select" id="select-lang" name="lang">
+            <option value="en">EN</option>
+            <option value="uk">UA</option>
+            <option value="kk">Қа</option>
+            <option value="de">DE</option>
+            <option value="pl">PL</option>
+            {% if lang %} <option class="selected-lang" value="{{lang}}" selected>{{lang_name}}</option> {% endif %}
+          </select>
+            <select class="animated-select" id="select-lang" name="type-food">
+              <option value="Sweet">Sweet</option>
+              <option value="Simple breakfast">Simple breakfast</option>
+              <option value="Snack">Snack</option>
+              <option value="Fast food">Fast food</option>
+              <option value="Cake">Cake</option>
+              <option value="Dinner">Dinner</option>
+              <option value="Soup">Soup</option>
+              <option value="Salad">Salad</option>
+              <option value="Diet dish">Diet dich</option>
+              <option value="Low calorie dish">Low calorie dish</option>
+              <option value="Hearty dish">Hearty dish</option>
+              <option value="Dish on the grill">Dish on the grill</option>
+              <option value="Dish on the picnic">Dish on the picnic</option>
+              <option value="Fish dish">Fish dish</option>
+              <option value="Cocktail">Cocktail</option>
+              <option value="Drink">Drink</option>
+              <option value="Marinade for meat">Marinade for meat</option>
+              {% if type_food %} <option value="{{type_food}}" class="selected-food" selected>{{type_food}}</option> {% endif %}
+          </select>
+         </form>
+      </div>
+    </div>
+  </div>
+<div class="container">
+  {% if image == None %}
+  <div class="result-container" style="margin: 0 auto;">
+  {% else %}
+  <div class="result-container">
+  {% endif %}
+    <h2 class="typing-text">{{prescription}}</h2>
+
+  {% if image %}
+  <div class="images-container">
+      <img src="{{image}}" alt="">
+      <img src="{{image2}}" alt="">
+  </div>
+  {% endif %}
+</div>
+
+
+ 
+
+
+
+{% endblock %}
