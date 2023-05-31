@@ -307,7 +307,7 @@ label {
   }
   
   .images-container {
-    float: right;
+    float: left;
     display: inline-block;
     position: relative;
     margin-right: 200px;
@@ -342,12 +342,30 @@ label {
     width: 0;
     animation: typing 4s steps(30) both 1s;
   }
+
+
+  pre {
+    max-width: auto;
+    font-family: 'Courier New', monospace;
+    font-size: 20px;
+    max-width: auto;
+    position: relative;
+    float: left;
+    word-wrap: break-word;
+    white-space: pre-wrap;
+    word-break: break-all;
+    color: rgb(255, 255, 255);
+    overflow: hidden;
+    animation: typing 4s steps(30) both 1s;;
+  }
   
+
+  
+  /* The typing effect */
   @keyframes typing {
     from { width: 0 }
     to { width: 100% }
   }
-
 
   .loader {
     background: transparent;
@@ -448,6 +466,7 @@ label {
   }
 }
   
+
   ul {
     list-style: none;
     margin: 0;
